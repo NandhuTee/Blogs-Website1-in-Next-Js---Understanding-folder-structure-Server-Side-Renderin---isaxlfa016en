@@ -1,17 +1,12 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import React from "react";
+import { useRouter } from "next/router";
 
-export default function PostDetail() {
-    const router = useRouter();
-    const { id } = router.query;
-
-    if (!id) {
-        return <div>Loading...</div>;
-    }
-
-    return (
-        <div>
-            <h1>Post Detail: {id}</h1>
-        </div>
-    );
+function PostDetail() {
+  // Complete the function
+  const router = useRouter();
+  console.log(router);
+  console.log(router.query.id);
+  return <h1 id={router.query.id}>Post Detail: {router.query.id}</h1>;
 }
+
+export default PostDetail;
