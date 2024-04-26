@@ -1,8 +1,13 @@
 import React from 'react';
-import { useParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 export default function PostDetail() {
-    const { id } = useParams();
+    const router = useRouter();
+    const { id } = router.query;
+
+    if (!id) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div>
